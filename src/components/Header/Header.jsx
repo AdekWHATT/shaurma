@@ -1,11 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux'
 import RegisterBtn from '../../components/RegisterBtn/RegisterBtn';
 import './Header.css';
 import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
 import { Link } from 'react-router-dom';
-const basketCount = 0;
 const Header = () => {
+  const myData = useSelector(state => state.cart);
   return (
     <>
       <div className='container'>
@@ -31,7 +33,7 @@ const Header = () => {
               <a href="#!">
                 <img src={basket} alt="Корзина" />
               </a>
-              <span className="basket_count">{basketCount}</span>
+              <span className="basket_count">{myData.cartCount}</span>
             </div>
           </div>
           <div className="col-sm-2">

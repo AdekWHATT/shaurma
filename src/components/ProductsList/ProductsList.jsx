@@ -1,21 +1,26 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 const ProductsList = ({ products }) => {
+  const dispatch = useDispatch(state => state.cart);
+const item = ''
+  const handleAddBasket = () => {
+    // Dispatch an action
+    dispatch({ 
+      type: "ADD_TO_CART", payload: item
+    }, 
+
+    );
+  }
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const [cart, setCart] = useState([]);
   // Выбор категории продуктов
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     setFilteredProducts(
       category === 'all' ? products : products.filter(product => product.category === category)
     );
-  };
-  // Добавление товара в корзину
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
-    console.log(product.id)
   };
   return (
     <div className='container mb-5'>
@@ -68,7 +73,7 @@ const ProductsList = ({ products }) => {
                 <div className='products-item__add-prod'>
                   <div className='products-item__add-volume'>{product.volume}</div>
                   <div className='products-item__add-price'>{product.price} &#8381;</div>
-                  <button className='products-item__add-button' onClick={() => handleAddToCart(product)}>+</button>
+                  <button className='products-item__add-button' onClick={handleAddBasket}>+</button>
                 </div>
               </div>
             ))}
