@@ -15,6 +15,7 @@ const ProductsList = ({ products }) => {
   // Добавление товара в корзину
   const handleAddToCart = (product) => {
     setCart([...cart, product]);
+    console.log(product.id)
   };
   return (
     <div className='container mb-5'>

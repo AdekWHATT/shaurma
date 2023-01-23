@@ -31,7 +31,6 @@ const Header = () => {
               <a href="#!">
                 <img src={basket} alt="Корзина" />
               </a>
-              <span>Корзина</span>
               <span className="basket_count">{basketCount}</span>
             </div>
           </div>
