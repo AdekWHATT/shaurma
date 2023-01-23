@@ -28,6 +28,9 @@ const Header = () => {
               <li><Link to=''>Контакты</Link></li>
             </ul>
           </div>
+          <div className="col-sm-2">
+            <RegisterBtn />
+          </div>
           <div className='col-sm-1'>
             <div className='header-basket'>
               <a href="#!">
@@ -36,9 +39,7 @@ const Header = () => {
               <span className="basket_count">{myData.cartCount}</span>
             </div>
           </div>
-          <div className="col-sm-2">
-            <RegisterBtn />
-          </div>
+          
         </div>
       </div>
     </>
