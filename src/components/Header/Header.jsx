@@ -39,7 +39,7 @@ const Header = () => {
               <span className="basket_count">{myData.cartCount}</span>
             </div>
           </div>
-          
+
         </div>
       </div>
     </>
