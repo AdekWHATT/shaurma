@@ -1,12 +1,12 @@
 import './App.css';
 import MainPage from './Pages/MainPage';
-import Cart from './Pages/Cart';
+import BasketPage from './Pages/BasketPage';
 import { Route, Routes, } from 'react-router-dom';
 function App() {
   return (
     <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/basket" element={<BasketPage />} />
     </Routes>
   );
 }

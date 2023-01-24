@@ -1,6 +1,8 @@
 .item-button-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 15px;
 }
 
 .products-btn {
@@ -25,6 +27,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    justify-content: center;
 }
 
 .products-item {
@@ -93,3 +96,26 @@
     justify-content: center;
     padding-bottom: 10px;
 }
+
+.products-item__add-button:active {
+    background: #f82d2a;
+    
+}
+@media (max-width: 1199px) {
+    .products-items-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .products-items-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  
+  @media (max-width: 575px) {
+    .products-items-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 const ProductsList = ({ products }) => {
   const dispatch = useDispatch();
 
-  const handleAddBasket = (product) => {
+  const handleAddBasket = (item) => {
     dispatch({
-      type: "ADD_TO_CART", payload: product
+      type: "ADD_TO_BASKET", payload: item
     }
     );
   };

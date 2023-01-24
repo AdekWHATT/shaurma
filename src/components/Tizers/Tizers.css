@@ -33,3 +33,12 @@ padding: 25px;
     color: #6B6A6A;
 
 }
+
+@media (max-width: 767px) {
+    .tizers-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+  }
