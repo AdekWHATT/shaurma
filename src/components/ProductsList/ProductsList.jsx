@@ -11,7 +11,7 @@ const ProductsList = ({ products }) => {
     }
     );
   };
-  const data = useSelector(state => state.cart);
+  // const data = useSelector(state => state.cart);
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -24,7 +24,7 @@ const ProductsList = ({ products }) => {
   };
   return (
     <div className='container mb-5'>
-      <h1>111 {JSON.stringify(data)}</h1>
+      {/* <h1>111 {JSON.stringify(data)}</h1> */}
       <div className='row mb-5'>
         <div className='col-12'>
           <div className='item-button-container'>
