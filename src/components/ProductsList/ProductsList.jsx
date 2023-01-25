@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 const ProductsList = ({ products }) => {
   const dispatch = useDispatch();
 

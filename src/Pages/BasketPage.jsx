@@ -5,6 +5,7 @@ const BasketPage = () => {
   return (
     <>
    <Header/>
+
    <Basket/>
    </>
   )
