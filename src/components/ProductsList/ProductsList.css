@@ -99,23 +99,24 @@
 
 .products-item__add-button:active {
     background: #f82d2a;
-    
+
 }
+
 @media (max-width: 1199px) {
     .products-items-container {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-  }
+}
 
-  @media (max-width: 991px) {
+@media (max-width: 991px) {
     .products-items-container {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
 
-  
-  @media (max-width: 575px) {
+
+@media (max-width: 575px) {
     .products-items-container {
-      grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-  }
+}

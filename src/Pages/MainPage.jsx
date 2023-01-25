@@ -3,6 +3,8 @@ import Header from '../components/Header/Header';
 import MainSlider from '../components/MainSlider/MainSlider';
 import Tizers from '../components/Tizers/Tizers';
 import ProductsList from '../components/ProductsList/ProductsList';
+import SaleSlider from '../components/SaleSlider/SaleSlider';
+import Footer from '../components/Footer/Footer';
 import classic from '../images/Products/shavuha.png';
 import bald from '../images/Products/bald.png';
 const products = [
@@ -194,7 +196,10 @@ const MainPage = () => {
       <Header />
       <MainSlider />
       <Tizers />
+      <SaleSlider/>
       <ProductsList products={products} />
+      
+      <Footer/>
     </>
   )
 }

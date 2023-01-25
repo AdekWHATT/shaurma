@@ -1,0 +1,23 @@
+.footer-row {
+    display: flex;
+    align-items: center;
+}
+.footer-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-list li a {
+    text-decoration: none;
+}
+.footer-social_container {
+    display: flex;
+    justify-content: center;
+}
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

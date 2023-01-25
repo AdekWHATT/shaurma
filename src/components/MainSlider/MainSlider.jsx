@@ -39,7 +39,8 @@ const MainSlider = () => {
             <div className='row'>
                 <div className='col-12'>
                     <Slider {...settings}>
-                        <img src={bannerImg} alt="Баннер" />
+                        <img
+                         src={bannerImg} alt="Баннер" />
                         <img src={bannerImg} alt="Баннер" />
                         <img src={bannerImg} alt="Баннер" />
                         <img src={bannerImg} alt="Баннер" />
