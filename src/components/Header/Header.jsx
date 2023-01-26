@@ -4,9 +4,15 @@ import RegisterBtn from '../../components/RegisterBtn/RegisterBtn';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
+import {auth, logout } from '../Firebase/Firebase';
+// import { useDispatch } from 'react-redux';
 import './Header.css';
-
+const handleLogout = (auth) => {
+  logout(auth)
+  console.log(auth)
+}
 const Header = (props) => {
+  // const dispatch = useDispatch();
   // console.log(props.name)
   const myData = useSelector(state => state.cart);
   return (
@@ -26,7 +32,9 @@ const Header = (props) => {
           </ul>
         </div>
         <div className="col-sm-3">
-          
+        <button className="dashboard__btn" onClick={handleLogout}>
+          Logout
+         </button>
           <RegisterBtn name={props.name}/>
         </div>
       </div>

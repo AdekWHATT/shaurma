@@ -5,7 +5,7 @@ const RegisterBtn = (props) => {
   const userName = props.name;
   return (
     <NavLink to='/register' className='register_btn'>
-      {userName}
+      {userName ? userName : 'Аккаунт'}
     </NavLink>
   )
 }

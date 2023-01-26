@@ -13,6 +13,7 @@ function App() {
    const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
+
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -24,14 +25,32 @@ function App() {
       alert("Произошла ошибка при извлечении пользовательских данных");
     }
   };
+
+  const fetchProducts = async () => {
+    try {
+      const querySnapshot = await collection(db, "products").get();
+      const productsData = querySnapshot.docs.map((doc) => doc.data());
+      dispatch({type:'FETCH_PRODUCTS',payload:productsData});
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred while fetching the products");
+    }
+  };
+
+ 
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/");
     fetchUserName();
   }, [user, loading]);
+
+
+  useEffect(() => {
+    fetchProducts()
+  })
   return (
     <Routes>
-      <Route path="/" element={<MainPage name={name}/>} />
+      <Route path="/" element={<MainPage/>} />
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reset" element={<Reset />} />
