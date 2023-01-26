@@ -1,12 +1,13 @@
 import React from 'react'
 import './RegisterBtn.css';
 import { NavLink } from 'react-router-dom';
-const RegisterBtn = () => {
+const RegisterBtn = (props) => {
+  const userName = props.name;
   return (
-   <NavLink to='/register' className='register_btn'>
-    Регистрация 
-   </NavLink>
+    <NavLink to='/register' className='register_btn'>
+      {userName}
+    </NavLink>
   )
 }
 
-export default RegisterBtn
+export default RegisterBtn;

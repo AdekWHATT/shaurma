@@ -8,6 +8,7 @@
     line-height: 18px;
     color: #FFFFFF;
     padding: 15px 30px;
+    text-decoration: none;
 }
 @media (max-width: 767px) {
     .register_btn {

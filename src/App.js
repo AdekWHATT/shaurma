@@ -31,7 +31,7 @@ function App() {
   }, [user, loading]);
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<MainPage name={name}/>} />
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reset" element={<Reset />} />

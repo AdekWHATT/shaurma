@@ -8,7 +8,6 @@ import {
   signInWithGoogle,
 } from "../Firebase/Firebase";
 import "./Register.css";
-
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,50 +22,51 @@ function Register() {
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/");
+    console.log(user);
   }, [user, loading]);
 
   return (
     <>
-      <Header />
-      <div className="container">
+      <Header user={user}/>
+      <div className="container mb-5">
         <div className="row">
           <div className="col-12">
             <div className="register__container">
               <h1 className="pb-3">Регистрация</h1>
               <div className="register__wrapp">
-              <input
-                type="text"
-                className="register__textBox"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Имя"
-              />
-              <input
-                type="text"
-                className="register__textBox"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="E-mail"
-              />
-              <input
-                type="password"
-                className="register__textBox"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Пароль"
-              />
-              <button className="register__btn" onClick={register}>
-                Зарегистрироваться
-              </button>
-              <button
-                className="register__btn register__google"
-                onClick={signInWithGoogle}
-              >
-                Авторизоваться через Google аккаунт
-              </button>
-              <div>
-                Уже есть аккаунт? <Link to="/">войдите</Link> сейчас.
-              </div>
+                <input
+                  type="text"
+                  className="register__textBox"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Имя"
+                />
+                <input
+                  type="text"
+                  className="register__textBox"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-mail"
+                />
+                <input
+                  type="password"
+                  className="register__textBox"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Пароль"
+                />
+                <button className="register__btn" onClick={register}>
+                  Зарегистрироваться
+                </button>
+                <button
+                  className="register__btn register__google"
+                  onClick={signInWithGoogle}
+                >
+                  Авторизоваться через Google аккаунт
+                </button>
+                <div>
+                  Уже есть аккаунт? <Link to="/">войдите</Link> сейчас.
+                </div>
               </div>
             </div>
           </div>

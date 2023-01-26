@@ -190,10 +190,10 @@ const products = [
   },
 ];
 
-const MainPage = () => {
+const MainPage = (props) => {
   return (
     <>
-      <Header />
+      <Header name={props.name}/>
       <MainSlider />
       <Tizers />
       <SaleSlider/>
