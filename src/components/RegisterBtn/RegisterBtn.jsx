@@ -1,10 +1,11 @@
 import React from 'react'
 import './RegisterBtn.css';
+import { NavLink } from 'react-router-dom';
 const RegisterBtn = () => {
   return (
-   <button className='register_btn' href="#!">
+   <NavLink to='/register' className='register_btn'>
     Регистрация 
-   </button>
+   </NavLink>
   )
 }
 

@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
-import './App.css';
-import MainPage from './Pages/MainPage';
-import BasketPage from './Pages/BasketPage';
-import Register from './components/Register/Register';
-import Reset from './components/Reset/Reset';
-import { Route, Routes, } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, db, logout } from "./components/Firebase/Firebase";
+import "./Dashboard.css";
+import { auth, db, logout } from "../Firebase/Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-function App() {
-   const [user, loading, error] = useAuthState(auth);
+function Dashboard() {
+  const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const fetchUserName = async () => {
@@ -30,12 +25,16 @@ function App() {
     fetchUserName();
   }, [user, loading]);
   return (
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/basket" element={<BasketPage />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/reset" element={<Reset />} />
-    </Routes>
+    <div className="dashboard">
+       <div className="dashboard__container">
+        Logged in as
+         <div>{name}</div>
+         <div>{user?.email}</div>
+         <button className="dashboard__btn" onClick={logout}>
+          Logout
+         </button>
+       </div>
+     </div>
   );
 }
-export default App;
+export default Dashboard;

@@ -198,7 +198,6 @@ const MainPage = () => {
       <Tizers />
       <SaleSlider/>
       <ProductsList products={products} />
-      
       <Footer/>
     </>
   )
