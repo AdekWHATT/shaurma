@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import Reset from './components/Reset/Reset';
 import { Route, Routes, } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "./components/Firebase/Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -13,7 +14,7 @@ function App() {
    const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
-
+const dispatch = useDispatch();
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -45,9 +46,9 @@ function App() {
   }, [user, loading]);
 
 
-  useEffect(() => {
-    fetchProducts()
-  })
+  // useEffect(() => {
+  //   fetchProducts()
+  // })
   return (
     <Routes>
       <Route path="/" element={<MainPage/>} />
