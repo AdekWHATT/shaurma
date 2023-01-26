@@ -21,7 +21,7 @@ function App() {
       setName(data.name);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      alert("Произошла ошибка при извлечении пользовательских данных");
     }
   };
   useEffect(() => {
