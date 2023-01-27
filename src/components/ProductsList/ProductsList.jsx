@@ -1,18 +1,17 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
-import { useDispatch} from 'react-redux';
-const ProductsList = ({ products }) => {
+import { useDispatch, useSelector } from 'react-redux';
+const ProductsList = () => {
+  const products = useSelector(store => store.products)
   const dispatch = useDispatch();
-
+  
   const handleAddBasket = (item) => {
     dispatch({
       type: "ADD_TO_BASKET", payload: item
     }
     );
   };
-  // const data = useSelector(state => state.cart);
-
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(products);
   // Выбор категории продуктов
@@ -24,7 +23,6 @@ const ProductsList = ({ products }) => {
   };
   return (
     <div className='container mb-5'>
-      {/* <h1>111 {JSON.stringify(data)}</h1> */}
       <div className='row mb-5'>
         <div className='col-12'>
           <div className='item-button-container'>

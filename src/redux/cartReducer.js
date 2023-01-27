@@ -1,4 +1,4 @@
-import {ADD_TO_BASKET, REMOVE_FROM_BASKET, CLEAR_BASKET, SEND_ORDER} from './cartActions';
+import {ADD_TO_BASKET, REMOVE_FROM_BASKET, CLEAR_BASKET} from './cartActions';
 
 const initialState = { cartItems: [], cartCount: 0 };
 
@@ -22,10 +22,6 @@ export default function cartReducer(state = initialState, action) {
           cartItems: [],
           cartCount: 0
         };
-      case SEND_ORDER:
-        return {
-          ...state
-        }
       default:
         return state;
     }
