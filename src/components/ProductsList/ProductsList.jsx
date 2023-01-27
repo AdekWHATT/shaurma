@@ -1,9 +1,21 @@
 import React from 'react';
+import {getDocs,collection} from "firebase/firestore";
 import './ProductsList.css';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { db } from '../Firebase/Firebase';
 const ProductsList = () => {
-  const products = useSelector(store => store.products)
+  const getProducts = async () => {
+    const productsRef = collection(db, "products");
+    const querySnapshot = await getDocs(productsRef);
+    const products = querySnapshot.docs.map(doc => doc.data());
+  }
+  useEffect(() => {
+    getProducts();
+  }, [products]);
+  console.log(products)
+
+  // const products = useSelector(store => store.products)
   const dispatch = useDispatch();
   
   const handleAddBasket = (item) => {
@@ -12,19 +24,19 @@ const ProductsList = () => {
     }
     );
   };
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [filteredProducts, setFilteredProducts] = useState(products);
-  // Выбор категории продуктов
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    setFilteredProducts(
-      category === 'all' ? products : products.filter(product => product.category === category)
-    );
-  };
+  // const [selectedCategory, setSelectedCategory] = useState('all');
+  // const [filteredProducts, setFilteredProducts] = useState(products);
+  // // Выбор категории продуктов
+  // const handleCategorySelect = (category) => {
+  //   setSelectedCategory(category);
+  //   setFilteredProducts(
+  //     category === 'all' ? products : products.filter(product => product.category === category)
+  //   );
+  // };
   return (
     <div className='container mb-5'>
       <div className='row mb-5'>
-        <div className='col-12'>
+        {/* <div className='col-12'>
           <div className='item-button-container'>
             <input
               type="button"
@@ -51,12 +63,12 @@ const ProductsList = () => {
               onClick={() => handleCategorySelect('souse')}
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className='row'>
         <div className='col-sm-12'>
           <div className='products-items-container'>
-            {filteredProducts.map(product => (
+            {/* {filteredProducts.map(product => (
               <div className='products-item' key={product.id}>
                 <div className='products-item__image'>
                   <img src={product.img} />
@@ -75,7 +87,7 @@ const ProductsList = () => {
                   <button className='products-item__add-button' onClick={() => handleAddBasket(product)}>+</button>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
