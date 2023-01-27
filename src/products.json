@@ -1,0 +1,182 @@
+[
+    {
+      "category": "shaurma",
+      "id": 1,
+      "img": "classic",
+      "name": "Классика",
+      "price": 180,
+      "structure": "Свежие огурцы, помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 2,
+      "img": "classic",
+      "name": "Балдежная",
+      "price": 190,
+      "structure": "Копчёный сыр, свежие огурцы, помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 3,
+      "img": "classic",
+      "name": "Лукас",
+      "price": 200,
+      "structure": "Маринованные огурцы, маринованный лук, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 5,
+      "img": "classic",
+      "name": "Сырная",
+      "price": 200,
+      "structure": "Сырный лаваш, сырный соус, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 6,
+      "img": "classic",
+      "name": "Острая",
+      "price": 200,
+      "structure": "Перчик халапеньо, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 7,
+      "img": "classic",
+      "name": "Фрик",
+      "price": 200,
+      "structure": "Картоха по-деревенски, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 8,
+      "img": "classic",
+      "name": "Эрик",
+      "price": 200,
+      "structure": "Сладкий картофель батат, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 9,
+      "img": "classic",
+      "name": "Грибная",
+      "price": 200,
+      "structure": "Жареные грибочки, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 10,
+      "img": "classic",
+      "name": "Абзы",
+      "price": 200,
+      "structure": "Пельмешки фри, огурцы, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 11,
+      "img": "classic",
+      "name": "Деревня",
+      "price": 200,
+      "structure": "Картоха по-деревенски, маринованные огурцы, маринованный лук, свежие помидоры, курочка, капуста, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 12,
+      "img": "classic",
+      "name": "Терияки",
+      "price": 200,
+      "structure": "Огурцы, свежие помидоры, курочка, капуста, соус терияки, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "shaurma",
+      "id": 13,
+      "img": "classic",
+      "name": "Красотка",
+      "price": 200,
+      "structure": "Сырный лаваш, копчёный сыр, огурцы, свежие помидоры, курочка, капуста, соус терияки, фирменный соус",
+      "volume": "1 шт"
+    },
+    {
+      "category": "vprikusku",
+      "id": 14,
+      "img": "classic",
+      "name": "Сырные палочки",
+      "price": 200,
+      "structure": "",
+      "volume": "6 шт"
+    },
+    {
+      "category": "vprikusku",
+      "id": 15,
+      "img": "classic",
+      "name": "Наггетсы",
+      "price": 170,
+      "structure": "",
+      "volume": "8 шт"
+    },
+    {
+      "category": "vprikusku",
+      "id": 16,
+      "img": "classic",
+      "name": "Картошка фри",
+      "price": 170,
+      "structure": "",
+      "volume": "140 гр."
+    },
+    {
+      "category": "vprikusku",
+      "id": 17,
+      "img": "classic",
+      "name": "Хруст",
+      "price": 80,
+      "structure": "",
+      "volume": "уп."
+    },
+    {
+      "category": "vprikusku",
+      "id": 18,
+      "img": "classic",
+      "name": "Батат",
+      "price": 150,
+      "structure": "",
+      "volume": "140 гр."
+    },
+    {
+      "category": "vprikusku",
+      "id": 19,
+      "img": "classic",
+      "name": "Пельмешки фри",
+      "price": 0,
+      "structure": "",
+      "volume": "15 шт."
+    },
+    {
+      "category": "vprikusku",
+      "id": 20,
+      "img": "classic",
+      "name": "По-деревенски",
+      "price": 0,
+      "structure": "",
+      "volume": "140 гр."
+    },
+    {
+      "category": "souse",
+      "id": 21,
+      "img": "classic",
+      "name": "Соус порционный",
+      "price": 0,
+      "structure": "",
+      "volume": "1 шт."
+    }
+  ]

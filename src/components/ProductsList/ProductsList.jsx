@@ -1,42 +1,30 @@
-import React from 'react';
-import {getDocs,collection} from "firebase/firestore";
+import React,  { useState }  from 'react';
+// import { observer } from 'mobx-react-lite';
 import './ProductsList.css';
-import { useState,useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { db } from '../Firebase/Firebase';
+import Products from '../../mobx/products';
+import BasketSale from '../../mobx/basket';
+import { toJS } from 'mobx';
 const ProductsList = () => {
-  const getProducts = async () => {
-    const productsRef = collection(db, "products");
-    const querySnapshot = await getDocs(productsRef);
-    const products = querySnapshot.docs.map(doc => doc.data());
-  }
-  useEffect(() => {
-    getProducts();
-  }, [products]);
-  console.log(products)
+  const basketBasket = new BasketSale();
+ const basketAll = toJS(basketBasket.basket);
+  const products = new Products();
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [filteredProducts, setFilteredProducts] = useState(products.products);
 
-  // const products = useSelector(store => store.products)
-  const dispatch = useDispatch();
-  
-  const handleAddBasket = (item) => {
-    dispatch({
-      type: "ADD_TO_BASKET", payload: item
-    }
+  // const [basketBasket, setbasketBasket] = useState(basketItems);
+  // console.log(basketBasket.basketCount);
+  // Выбор категории продуктов
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setFilteredProducts(
+      category === 'all' ? products.products : products.products.filter(product => product.category === category)
     );
   };
-  // const [selectedCategory, setSelectedCategory] = useState('all');
-  // const [filteredProducts, setFilteredProducts] = useState(products);
-  // // Выбор категории продуктов
-  // const handleCategorySelect = (category) => {
-  //   setSelectedCategory(category);
-  //   setFilteredProducts(
-  //     category === 'all' ? products : products.filter(product => product.category === category)
-  //   );
-  // };
   return (
     <div className='container mb-5'>
       <div className='row mb-5'>
-        {/* <div className='col-12'>
+        <div className='col-12'>
           <div className='item-button-container'>
             <input
               type="button"
@@ -63,12 +51,12 @@ const ProductsList = () => {
               onClick={() => handleCategorySelect('souse')}
             />
           </div>
-        </div> */}
+        </div>
       </div>
       <div className='row'>
         <div className='col-sm-12'>
           <div className='products-items-container'>
-            {/* {filteredProducts.map(product => (
+            {filteredProducts.map(product => (
               <div className='products-item' key={product.id}>
                 <div className='products-item__image'>
                   <img src={product.img} />
@@ -84,10 +72,10 @@ const ProductsList = () => {
                 <div className='products-item__add-prod'>
                   <div className='products-item__add-volume'>{product.volume}</div>
                   <div className='products-item__add-price'>{product.price} &#8381;</div>
-                  <button className='products-item__add-button' onClick={() => handleAddBasket(product)}>+</button>
+                  <button className='products-item__add-button' onClick ={() => basketBasket.addtoBasket(product)}>+</button>
                 </div>
               </div>
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

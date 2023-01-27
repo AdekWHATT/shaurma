@@ -1,20 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
 import RegisterBtn from '../../components/RegisterBtn/RegisterBtn';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
-// import {auth, logout } from '../Firebase/Firebase';
-// import { useDispatch } from 'react-redux';
 import './Header.css';
-// const handleLogout = (auth) => {
-//   logout(auth)
-//   console.log(auth)
-// }
-const Header = (props) => {
-  // const dispatch = useDispatch();
-  // console.log(props.name)
-  // const myData = useSelector(state => state.cart);
+import BasketSale from '../../mobx/basket';
+
+const Header = () => {
+  const basketItems = new BasketSale();
+  console.log(basketItems.basketCount);
   return (
     <div className='container mb-3'>
       <div className='row header-row'>
@@ -35,13 +29,13 @@ const Header = (props) => {
         <button className="dashboard__btn" >
           Logout
          </button>
-          <RegisterBtn name={props.name}/>
+          <RegisterBtn />
         </div>
       </div>
       <div className='header-basket'>
           <NavLink to='/basket'>
             <img src={basket} alt="Корзина" />
-            <span className="basket_count">0</span>
+            <span className="basket_count">{basketItems.basketCount}</span>
           </NavLink>
         </div>
     </div>

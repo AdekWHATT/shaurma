@@ -1,39 +1,18 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addToBasket, removeFromBasket, clearBasket } from '../../redux/cartActions';
 import './Basket.css';
-
+import BasketSale from '../../mobx/basket';
+import { toJS } from 'mobx';
 const Basket = () => {
-  // use useSelector hook to access the global state
-  const basketItems = useSelector(state => state.cart.cartItems);
-  const allPrice = useSelector(state => state.cart.cartItems);
-  allPrice.map(i => (
-    console.log(i)
-  ))
-  const dispatch = useDispatch();
-  // handle adding an item to the basket
-  const handleAdd = itemId => {
-    dispatch(addToBasket(itemId));
-  }
-
-  // handle removing an item from the basket
-  const handleRemove = itemId => {
-    dispatch(removeFromBasket(itemId));
-  }
-
-  // handle clearing the entire basket
-  const handleClear = () => {
-    dispatch(clearBasket());
-  }
-
-
+  const basketItems = new BasketSale();
+  const basketAll = toJS(basketItems);
+  console.log(basketAll)
   return (
     <div className='container'>
       <div className='row'>
       <h2 className='text-center'>Корзина</h2>
         <div className='col-6'>
 <div className='basket-items_container'>
-{basketItems.length === 0 ? <span className='fs-3 text-center'>Корзина Пуста, <br/>перейдите к каталогу на главной</span> : basketItems.map(item => (
+{basketAll.basket.length === 0 ? <span className='fs-3 text-center'>Корзина Пуста, <br/>перейдите к каталогу на главной</span> : basketAll.basket.map(item => (
           <div className='basket-item' key={item.id}>
             <div>
             <img className='basket-item__img' src={item.img}/>
@@ -44,7 +23,7 @@ const Basket = () => {
             <span className='basket-item__price'>
             {item.price} р.
             </span>
-            <button className='removeBasket_btn' onClick={() => handleRemove(item.id)}>Удалить</button>
+            <button className='removeBasket_btn'>Удалить</button>
           </div>
           
         ))}
@@ -53,24 +32,24 @@ const Basket = () => {
         <div className='col-6'>
           <div className='basket-offer_container'>
             <span>Общая сумма: {}</span>
-            <button onClick={() => handleAdd} className='register_btn'>Оформить заказ</button>
-            <button className='register_btn' onClick={handleClear}>Очистить корзину</button>
+            {/* <button onClick={() => handleAdd} className='register_btn'>Оформить заказ</button>
+            <button className='register_btn' onClick={handleClear}>Очистить корзину</button> */}
           </div>
           </div>
       </div>
       
-      {/* <ul>
-      {basketItems.map(item => (
+      <ul>
+      {basketItems.basket.map(item => (
           <li key={item.id}>
             <p>
               Товар: 
             {item.name}
             </p>
            {item.price}
-            <button className='removeBasket_btn' onClick={() => handleRemove(item.id)}>Удалить</button>
+            <button className='removeBasket_btn'>Удалить</button>
           </li>
         ))}
-      </ul> */}
+      </ul>
      
     </div>
   )
