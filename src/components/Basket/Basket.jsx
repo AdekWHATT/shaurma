@@ -2,7 +2,8 @@ import React from 'react';
 import './Basket.css';
 import BasketSale from '../../mobx/basket';
 import { toJS } from 'mobx';
-const Basket = () => {
+import { observer } from 'mobx-react-lite';
+const Basket = observer(() => {
   const basketItems = new BasketSale();
   const basketAll = toJS(basketItems);
   console.log(basketAll)
@@ -53,6 +54,6 @@ const Basket = () => {
      
     </div>
   )
-}
+})
 
 export default Basket;

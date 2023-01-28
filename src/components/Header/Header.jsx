@@ -5,10 +5,10 @@ import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
 import './Header.css';
 import BasketSale from '../../mobx/basket';
+import { observer } from 'mobx-react-lite';
 
-const Header = () => {
-  const basketItems = new BasketSale();
-  console.log(basketItems.basketCount);
+const basketItems = new BasketSale();
+const Header = observer(() => {
   return (
     <div className='container mb-3'>
       <div className='row header-row'>
@@ -40,6 +40,6 @@ const Header = () => {
         </div>
     </div>
   )
-}
+})
 
 export default Header;

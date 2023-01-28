@@ -1,10 +1,11 @@
 import React,  { useState }  from 'react';
-// import { observer } from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import './ProductsList.css';
 import Products from '../../mobx/products';
 import BasketSale from '../../mobx/basket';
 import { toJS } from 'mobx';
-const ProductsList = () => {
+
+const ProductsList = observer(() => {
   const basketBasket = new BasketSale();
  const basketAll = toJS(basketBasket.basket);
   const products = new Products();
@@ -12,6 +13,8 @@ const ProductsList = () => {
   const [filteredProducts, setFilteredProducts] = useState(products.products);
 
   // const [basketBasket, setbasketBasket] = useState(basketItems);
+  // console.log(basketBasket.basketCount);
+  // Выбор категории продуктов  // const [basketBasket, setbasketBasket] = useState(basketItems);
   // console.log(basketBasket.basketCount);
   // Выбор категории продуктов
 
@@ -82,6 +85,6 @@ const ProductsList = () => {
 
     </div>
   )
-}
+})
 
 export default ProductsList;
