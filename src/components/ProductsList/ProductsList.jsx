@@ -1,22 +1,22 @@
-import React,  { useState }  from 'react';
+import React,  { useState, useEffect}  from 'react';
 import { observer } from 'mobx-react-lite';
 import './ProductsList.css';
 import Products from '../../mobx/products';
 import BasketSale from '../../mobx/basket';
-import { toJS } from 'mobx';
+// import { toJS } from 'mobx';
 
 const ProductsList = observer(() => {
-  const basketBasket = new BasketSale();
- const basketAll = toJS(basketBasket.basket);
+  
+//  const basketAll = toJS(basketBasket.basket);
   const products = new Products();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [filteredProducts, setFilteredProducts] = useState(products.products);
+  const[basketBasket, setUseState] = useState(new BasketSale());
+  console.log(BasketSale.basketBasket)
 
-  // const [basketBasket, setbasketBasket] = useState(basketItems);
-  // console.log(basketBasket.basketCount);
-  // Выбор категории продуктов  // const [basketBasket, setbasketBasket] = useState(basketItems);
-  // console.log(basketBasket.basketCount);
-  // Выбор категории продуктов
+  // useEffect (() =>{
+  //   setUseState()
+  // },[]);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import RegisterBtn from '../../components/RegisterBtn/RegisterBtn';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/All/logo.png';
@@ -7,9 +8,14 @@ import './Header.css';
 import BasketSale from '../../mobx/basket';
 import { observer } from 'mobx-react-lite';
 
-const basketItems = new BasketSale();
 const Header = observer(() => {
+  const[basketBasket, setUseState] = useState(new BasketSale());
+    // useEffect (() =>{
+    //   setUseState()
+    // },[]);
+    // console.log(basketBasket, 'header.js')
   return (
+    
     <div className='container mb-3'>
       <div className='row header-row'>
         <div className='col-sm-2'>
@@ -35,7 +41,7 @@ const Header = observer(() => {
       <div className='header-basket'>
           <NavLink to='/basket'>
             <img src={basket} alt="Корзина" />
-            <span className="basket_count">{basketItems.basketCount}</span>
+            <span className="basket_count">{basketBasket ? basketBasket.basketCount : 0}</span>
           </NavLink>
         </div>
     </div>

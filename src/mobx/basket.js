@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 // import { toJS } from "mobx";
-class BasketSale{
+ class BasketSale{
     basket = [];
     basketCount = 0;
     constructor() {
@@ -8,9 +8,10 @@ class BasketSale{
     }
 
     addtoBasket(product) {
-        this.basket = this.basket.push(product)
-        this.basketCount = this.basketCount++ ;
-        console.log(this.basketCount)
+        this.basket.push(product);
+        this.basketCount++ ;
+        // console.log(this.basketCount);
     }
+    
 }
 export default BasketSale;
