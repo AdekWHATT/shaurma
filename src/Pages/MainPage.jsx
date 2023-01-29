@@ -5,9 +5,10 @@ import Tizers from '../components/Tizers/Tizers';
 import ProductsList from '../components/ProductsList/ProductsList';
 import SaleSlider from '../components/SaleSlider/SaleSlider';
 import Footer from '../components/Footer/Footer';
-import classic from '../images/Products/shavuha.png';
-import bald from '../images/Products/bald.png';
-import {auth, logout, db } from '../components/Firebase/Firebase';
+// import classic from '../images/Products/shavuha.png';
+// import bald from '../images/Products/bald.png';
+// import {auth, logout, db } from '../components/Firebase/Firebase';
+
 // const products = [
 //   {
 //     id: 1, 

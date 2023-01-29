@@ -3,7 +3,8 @@ import './ProductsList.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 const ProductsList = () => {
-  const products = useSelector(store => store.products)
+  const [products, setProducts] = useState();
+  // const products = useSelector(store => store.products)
   const dispatch = useDispatch();
   
   const handleAddBasket = (item) => {
