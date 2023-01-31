@@ -1,10 +1,11 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
+import {database} from '../../components/Firebase/Firebase'
 import { useDispatch, useSelector } from 'react-redux';
 const ProductsList = () => {
-  const [products, setProducts] = useState();
-  // const products = useSelector(store => store.products)
+  const [products, setProducts] = useState(database);
+  console.log({products});
   const dispatch = useDispatch();
   
   const handleAddBasket = (item) => {

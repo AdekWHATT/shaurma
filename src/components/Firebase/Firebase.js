@@ -8,6 +8,7 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 import {
   getFirestore,
   query,
@@ -23,13 +24,16 @@ const firebaseConfig = {
   storageBucket: "shaurma-42214.appspot.com",
   messagingSenderId: "1085867038549",
   appId: "1:1085867038549:web:e611ecc9728ab60c5241dc",
-  measurementId: "G-Z8LNTWKZ7L"
+  measurementId: "G-Z8LNTWKZ7L",
+  databaseURL: "https://shaurma-42214-default-rtdb.firebaseio.com/",
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const database = getDatabase(app);
 const googleProvider = new GoogleAuthProvider();
+
 
 const signInWithGoogle = async () => {
   try {
@@ -93,6 +97,7 @@ const logout = () => {
 export {
   auth,
   db,
+  database,
   signInWithGoogle,
   signInWithEmailAndPassword,
   logInWithEmailAndPassword,
