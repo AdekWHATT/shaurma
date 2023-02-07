@@ -1,13 +1,13 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
-import {database} from '../../components/Firebase/Firebase'
+import { database } from '../../components/Firebase/Firebase'
 import { useDispatch, useSelector } from 'react-redux';
+import products from '../../products.json';
 const ProductsList = () => {
-  const [products, setProducts] = useState(database);
-  console.log({products});
+  const [productsList, setProducts] = useState(products);
   const dispatch = useDispatch();
-  
+
   const handleAddBasket = (item) => {
     dispatch({
       type: "ADD_TO_BASKET", payload: item
@@ -15,7 +15,7 @@ const ProductsList = () => {
     );
   };
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState(productsList);
   // Выбор категории продуктов
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
