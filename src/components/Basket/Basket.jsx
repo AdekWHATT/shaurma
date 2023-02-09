@@ -4,24 +4,23 @@ import { addToBasket, removeFromBasket, clearBasket } from '../../redux/cartActi
 import './Basket.css';
 
 const Basket = () => {
-  // use useSelector hook to access the global state
+
   const basketItems = useSelector(state => state.cart.cartItems);
   const allPrice = useSelector(state => state.cart.cartItems);
   allPrice.map(i => (
     console.log(i)
   ))
   const dispatch = useDispatch();
-  // handle adding an item to the basket
+
   const handleAdd = itemId => {
     dispatch(addToBasket(itemId));
   }
 
-  // handle removing an item from the basket
+
   const handleRemove = itemId => {
     dispatch(removeFromBasket(itemId));
   }
 
-  // handle clearing the entire basket
   const handleClear = () => {
     dispatch(clearBasket());
   }
@@ -59,19 +58,6 @@ const Basket = () => {
           </div>
       </div>
       
-      {/* <ul>
-      {basketItems.map(item => (
-          <li key={item.id}>
-            <p>
-              Товар: 
-            {item.name}
-            </p>
-           {item.price}
-            <button className='removeBasket_btn' onClick={() => handleRemove(item.id)}>Удалить</button>
-          </li>
-        ))}
-      </ul> */}
-     
     </div>
   )
 }

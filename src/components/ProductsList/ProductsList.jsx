@@ -1,8 +1,7 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
-import { database } from '../../components/Firebase/Firebase'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import products from '../../products.json';
 const ProductsList = () => {
   const [productsList, setProducts] = useState(products);
