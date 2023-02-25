@@ -6,6 +6,7 @@ import 'firebase/compat/database';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
   apiKey: "AIzaSyAOp9Sl13l8orikjMVGo42bcq2Re5U15lg",
   authDomain: "myfood-7a3c5.firebaseapp.com",
@@ -16,6 +17,8 @@ const firebaseConfig = {
   appId: "1:534840246208:web:3a251a350c48cbc6791225",
   measurementId: "G-SVSJ2NJ74N"
 };
+
+
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
