@@ -1,20 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux'
-import RegisterBtn from '../../components/RegisterBtn/RegisterBtn';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
-import {auth, logout } from '../Firebase/Firebase';
-// import { useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 import './Header.css';
-const handleLogout = (auth) => {
-  logout(auth)
-  console.log(auth)
-}
-const Header = (props) => {
-  // const dispatch = useDispatch();
-  // console.log(props.name)
-  const myData = useSelector(state => state.cart);
+
+const Header = () => {
+  const basketCount = useSelector(state => state.basket.totalQuantity);
   return (
     <div className='container mb-3'>
       <div className='row header-row'>
@@ -32,16 +24,12 @@ const Header = (props) => {
           </ul>
         </div>
         <div className="col-sm-3">
-        <button className="dashboard__btn" onClick={handleLogout}>
-          Logout
-         </button>
-          <RegisterBtn name={props.name}/>
         </div>
       </div>
       <div className='header-basket'>
           <NavLink to='/basket'>
             <img src={basket} alt="Корзина" />
-            <span className="basket_count">{myData.cartCount}</span>
+            <span className="basket_count">{basketCount}</span>
           </NavLink>
         </div>
     </div>

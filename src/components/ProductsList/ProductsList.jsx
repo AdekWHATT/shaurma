@@ -1,26 +1,36 @@
 import React from 'react';
 import './ProductsList.css';
 import { useState } from 'react';
-import { useDispatch} from 'react-redux';
-import products from '../../products.json';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProducts } from '../../redux/productSlice';
+import { addItemToBasket } from '../../redux/basketSlice';
+
 const ProductsList = () => {
-  const [productsList, setProducts] = useState(products);
+  const products = useSelector(state => state.products.products);
   const dispatch = useDispatch();
 
-  const handleAddBasket = (item) => {
-    dispatch({
-      type: "ADD_TO_BASKET", payload: item
-    }
-    );
-  };
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [filteredProducts, setFilteredProducts] = useState(productsList);
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
+
   // Выбор категории продуктов
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
     setFilteredProducts(
       category === 'all' ? products : products.filter(product => product.category === category)
     );
+  };
+  // Добавление товара в корзину
+  const handleAddToBasket = (product) => {
+    dispatch(addItemToBasket(product));
   };
   return (
     <div className='container mb-5'>
@@ -73,14 +83,13 @@ const ProductsList = () => {
                 <div className='products-item__add-prod'>
                   <div className='products-item__add-volume'>{product.volume}</div>
                   <div className='products-item__add-price'>{product.price} &#8381;</div>
-                  <button className='products-item__add-button' onClick={() => handleAddBasket(product)}>+</button>
+                  <button className='products-item__add-button' onClick={() => handleAddToBasket(product)}>+</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-
     </div>
   )
 }

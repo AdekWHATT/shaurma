@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/Header/Header';
 import Basket from '../components/Basket/Basket';
+import Header from '../components/Header/Header'
 const BasketPage = () => {
   return (
     <>
-      <Header />
-      <Basket />
+    <Header/>
+    <Basket/>
     </>
   )
 }
 
-export default BasketPage;
+export default BasketPage
