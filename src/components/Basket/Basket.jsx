@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Basket.css';
 import { removeItemFromBasket } from '../../redux/basketSlice';
@@ -16,13 +16,13 @@ const Basket = () => {
                 <h2 className='text-center'>Корзина</h2>
                 <div className='col-6'>
                     <div className='basket-items_container'>
-                        {basketItems.length === 0 ? <span className='fs-3 text-center'>Корзина Пуста, <br />перейдите к каталогу на главной</span> : basketItems.map(item => (
+                        {basketItems.length === 0 ? <span className='fs-3 text-center'>Корзина Пуста, <br />перейдите к <a href="/"> каталогу на главной</a></span> : basketItems.map(item => (
                             <div className='basket-item' key={item.id}>
                                 <div>
                                     <img className='basket-item__img' src={item.img} />
                                 </div>
                                 <span className='basket-item__title'>
-                                    {item.name} {item.quantity > 1 && <span>x{item.quantity}</span>}
+                                    {item.name} {item.quantity > 1 && <span>- {item.quantity} шт. на сумму = </span>}
                                 </span>
                                 <span className='basket-item__price'>
                                     {item.price * item.quantity} р.
