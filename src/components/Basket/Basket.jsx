@@ -5,7 +5,8 @@ import { removeItemFromBasket } from '../../redux/basketSlice';
 
 const Basket = () => {
     const dispatch = useDispatch();
-    const basketItems = useSelector(state => state.basket.items)
+    const basketItems = useSelector(state => state.basket.items);
+    const basketTotalPrice = useSelector(state => state.basket.totalPrice);
     const handleRemove = itemId => {
         dispatch(removeItemFromBasket(itemId));
     }
@@ -21,10 +22,10 @@ const Basket = () => {
                                     <img className='basket-item__img' src={item.img} />
                                 </div>
                                 <span className='basket-item__title'>
-                                    {item.name}
+                                    {item.name} {item.quantity > 1 && <span>x{item.quantity}</span>}
                                 </span>
                                 <span className='basket-item__price'>
-                                    {item.price} р.
+                                    {item.price * item.quantity} р.
                                 </span>
                                 <button className='removeBasket_btn' onClick={() => handleRemove(item.id)}>Удалить</button>
                             </div>
@@ -33,7 +34,7 @@ const Basket = () => {
                 </div>
                 <div className='col-6'>
                     <div className='basket-offer_container'>
-                        <span>Общая сумма: </span>
+                        <span>Общая сумма: {basketTotalPrice} руб</span>
                         <button className='register_btn'>Оформить заказ</button>
                         <button className='register_btn' >Очистить корзину</button>
                     </div>
