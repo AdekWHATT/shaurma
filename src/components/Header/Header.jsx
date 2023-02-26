@@ -4,6 +4,7 @@ import logo from '../../images/All/logo.png';
 import basket from '../../images/Header/basket.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItemFromBasket } from '../../redux/basketSlice';
+
 import './Header.css';
 
 const Header = () => {
@@ -51,7 +52,7 @@ const Header = () => {
                 <span className=''>
                   {item.price * item.quantity} р.
                 </span>
-                <button className='basket-dropdown__delete-item' onClick={() => handleRemove(item.id)}>Удалить</button>
+                <button className='basket-dropdown__delete-item' onClick={() => handleRemove(item.id)}>X</button>
               </div>
             ))
           )
@@ -70,5 +71,4 @@ const Header = () => {
     </div>
   )
 }
-
 export default Header;
