@@ -1,6 +1,7 @@
 {
   "name": "shaurma",
   "version": "0.1.0",
+  "homepage": "https://adekwhatt.github.io/shaurma/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
