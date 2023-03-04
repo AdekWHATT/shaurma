@@ -110,3 +110,19 @@
     border-radius: 10px;
     padding: 5px;
 }
+
+@media (max-width: 575px) {
+    .header-basket {
+        top: 0;
+        right: 20px;
+    }
+
+    .header-mobile-res {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header_navlist {
+        padding: 10px;
+    }
+}

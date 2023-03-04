@@ -20,17 +20,17 @@ const Header = () => {
   return (
     <div className='container mb-3'>
       <div className='row header-row'>
-        <div className='col-sm-2'>
+        <div className='col-sm-2 header-mobile-res'>
           <NavLink to='/'>
             <img src={logo} alt="Шаурмалай" />
           </NavLink>
         </div>
         <div className='col-sm-7'>
           <ul className='header_navlist'>
-            <NavLink to='/menu'>Меню</NavLink>
-            <NavLink to='/deals'>Акции</NavLink>
-            <NavLink to='/jobs'>Вакансии</NavLink>
-            <NavLink to='/contacts'>Контакты</NavLink>
+            <NavLink to=''>Меню</NavLink>
+            <NavLink to=''>Акции</NavLink>
+            <NavLink to=''>Вакансии</NavLink>
+            <NavLink to=''>Контакты</NavLink>
           </ul>
         </div>
         <div className="col-sm-3">
