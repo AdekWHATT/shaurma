@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shaurma/static/css/main.8d0c2d7b.css",
-    "main.js": "/shaurma/static/js/main.3573846d.js",
+    "main.css": "/shaurma/static/css/main.e97400d5.css",
+    "main.js": "/shaurma/static/js/main.1db35de7.js",
     "static/media/banner-img.png": "/shaurma/static/media/banner-img.a77a89ea217a97c98c8a.png",
     "static/media/sitnik.jpg": "/shaurma/static/media/sitnik.c89a10d444e2be4454c3.jpg",
     "static/media/pite.jpg": "/shaurma/static/media/pite.c2e8365e85bcd9683948.jpg",
@@ -20,11 +20,11 @@
     "static/media/rocket.svg": "/shaurma/static/media/rocket.f1f8967b05ad4923a3effbdb22ed1159.svg",
     "static/media/slick.woff": "/shaurma/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/shaurma/index.html",
-    "main.8d0c2d7b.css.map": "/shaurma/static/css/main.8d0c2d7b.css.map",
-    "main.3573846d.js.map": "/shaurma/static/js/main.3573846d.js.map"
+    "main.e97400d5.css.map": "/shaurma/static/css/main.e97400d5.css.map",
+    "main.1db35de7.js.map": "/shaurma/static/js/main.1db35de7.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d0c2d7b.css",
-    "static/js/main.3573846d.js"
+    "static/css/main.e97400d5.css",
+    "static/js/main.1db35de7.js"
   ]
 }
